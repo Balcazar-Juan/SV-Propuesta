@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="cora.png" type="image/x-icon">
+    <title>Flowers</title>
+</head>
+
+<body>
+    <div class="greetings">
+        <span>¡TE</span>
+        <span>AMO</span>
+        <span>MUCHO!</span>
+    </div>
+    <div class="description">
+        <span>MI HERMOSA Y DULCE PRINCESITA, ¿QUISIERAS SER MI SAN VALENTÍN?</span>
+    </div>
+    <div class="contebot">
+    <div class="button">
+        <button class="botones">
+            <a href="/flores.html">SIIII, SI QUIEROO</a>
+        </button>
+    
+        <button id="moverBoton" class="botones">NO, FEO</button>
+    </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const boton = document.getElementById("moverBoton");
+
+            boton.style.position = "absolute"; // Asegura que pueda moverse por la pantalla
+
+            boton.addEventListener("click", () => {
+                const anchoVentana = window.innerWidth - boton.clientWidth;
+                const altoVentana = window.innerHeight - boton.clientHeight;
+
+                const nuevaX = Math.floor(Math.random() * anchoVentana);
+                const nuevaY = Math.floor(Math.random() * altoVentana);
+
+                boton.style.left = `${nuevaX}px`;
+                boton.style.top = `${nuevaY}px`;
+            });
+        });
+    </script>
+</body>
+
+</html>
